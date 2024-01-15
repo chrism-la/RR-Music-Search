@@ -35,11 +35,22 @@ function App() {
 
     return (
         <div>
-            <SearchBar handleSearch={handleSearch} />
             {message}
-            <Gallery data={data} />
-            <AlbumView />
-            <ArtistView />
+            <Router>
+                <Routes>
+                    <Route
+                        path="/"
+                        element={
+                            <Fragment>
+                                <SearchBar handleSearch={handleSearch} />
+                                <Gallery data={data} />
+                            </Fragment>
+                        }
+                    />
+                    <Route path="/album/:id" element={<AlbumView />} />
+                    <Route path="/artist/:id" element={<ArtistView />} />
+                </Routes>
+            </Router>
         </div>
     );
 }
