@@ -39,7 +39,7 @@ function GalleryItem(props) {
                     <Link to={`/artist/${props.item.artistId}`}>{props.item.artistName}</Link>
                 </h3>
                 <h3>
-                    <Link href={`/album/${props.item.collectionId}`}>{props.item.collectionName}</Link>
+                    <Link to={`/album/${props.item.collectionId}`}>{props.item.collectionName}</Link>
                 </h3>
                 <h4>{props.item.primaryGenreName}</h4>
                 <h4>{props.item.releaseDate}</h4>
