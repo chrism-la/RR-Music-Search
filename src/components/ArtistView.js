@@ -10,10 +10,10 @@ function ArtistView() {
         const fetchData = async () => {
             const response = await fetch(API_URL);
             const resData = await response.json();
-            console.log(resData);
+            setArtistData(resData.results);
         };
         fetchData();
-    });
+    }, [id]);
     return (
         <div>
             <h2>The id passed was :{id}</h2>
